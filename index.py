@@ -13,4 +13,8 @@ confirmed = pd.read_csv(url_confirmed)
 deaths = pd.read_csv(url_deaths)
 recovered = pd.read_csv(url_recovered)
 
+date1 = confirmed.columns[4:]
+total_confirmed = confirmed.melt(id_vars = ['Province/State', 'Country/Region', 'Lat', 'Long'], value_vars = date1, var_name = 'date', value_name = 'confirmed')
+total_confirmed.tail()
+
 
